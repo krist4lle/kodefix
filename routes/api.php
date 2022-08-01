@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sms', [App\Http\Controllers\SmsController::class, 'show']);
+Route::post('/sms', [App\Http\Controllers\SmsController::class, 'show']);
