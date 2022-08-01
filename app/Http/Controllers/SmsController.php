@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SmsRequest;
+use App\Services\SmsService;
 
 class SmsController extends Controller
 {
-    public function show(SmsRequest $request)
+    public function show(SmsRequest $request, SmsService $service)
     {
         $data = $request->validated();
-        $result = $service->solveSms($data);
 
-        return $result;
+        return $service->solveSms($data['sms']);
     }
 }
